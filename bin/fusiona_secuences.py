@@ -5,7 +5,8 @@ import os
 #os.system('ls')#
 
 
-base_path="../data/datasets/"
+base_path = "../data/datasets/"
+means_path = "../data/means/"
 
 caffe_path="/opt/caffe-gpu"
 
@@ -47,8 +48,26 @@ convert_comand="GLOG_logtostderr=1 "+caffe_path+caffe_convert_imaggen_tool+" "\
                sufle_param+" /"+" "+base_path+output_train_file_name+" "+base_path+output_train_file_name+"_lmdb"
 
 print convert_comand
+os.system(convert_comand)
 
-#GLOG_logtostderr=1 /Users/luispeinado/caffe/build/tools/convert_imageset --resize_height=320 --resize_width=240 --shuffle /  sequence2_dataset.txt train_lmdb2
+convert_comand="GLOG_logtostderr=1 "+caffe_path+caffe_convert_imaggen_tool+" " \
+               +resize_height_param+"="+new_height+" "+resize_width_param+"="+new_width+" "+ \
+               sufle_param+" /"+" "+base_path+output_test_file_name+" "+base_path+output_test_file_name+"_lmdb"
+
+print convert_comand
+os.system(convert_comand)
 
 
-#/Users/luispeinado/caffe/build/tools/compute_image_mean train_lmdb2 mean_image_seq2.binaryproto
+mean_comand=caffe_path+caffe_compute_mean_tool+" " \
+               +base_path+output_train_file_name+"_lmdb"+" "+means_path+output_train_file_name+".binaryproto"
+
+print mean_comand
+os.system(mean_comand)
+
+mean_comand=caffe_path+caffe_compute_mean_tool+" " \
+            +base_path+output_test_file_name+"_lmdb"+" "+means_path+output_test_file_name+".binaryproto"
+
+print mean_comand
+os.system(mean_comand)
+
+
