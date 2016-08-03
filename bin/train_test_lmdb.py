@@ -14,10 +14,10 @@ import h5py
 import caffe
 import caffe.draw
 
-solver_prototxt_filename="solver.prototxt"
+solver_prototxt_filename="/vol/pfc/prototxt/sequence1/solver.prototxt"
 
 caffe.set_mode_cpu()
 solver = caffe.get_solver(solver_prototxt_filename)
-#solver.solve()
+solver.solve()
 
 

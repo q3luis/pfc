@@ -1,5 +1,5 @@
 # The train/test net protocol buffer definition
-net: "/vol/pfc/prototxt/sequence1/train_sequence_1_caffenet-lmdb.prototxt"
+net: "/vol/pfc/prototxt/sequence5/train_sequence_25_lmdb.prototxt"
 # test_iter specifies how many forward passes the test should carry out.
 #test_iter: 100
 # Carry out testing every test_interval training iterations.
@@ -19,6 +19,6 @@ display: 5000
 max_iter: 35000
 # snapshot intermediate results
 snapshot: 5000
-snapshot_prefix: "train_sequence_1_caffenet_20"
+snapshot_prefix: "train_sequence_5_25_lmdb"
 # solver mode: CPU or GPU
 solver_mode: GPU

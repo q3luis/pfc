@@ -11,11 +11,11 @@ layer {
   data_param {
     # path to the DB
     #source: "/mnt/data_input/Sequence1_lmdb/"
-    source: "/vol/calculado_en_mi_mac/new_lmdb/train_lmdb" 
+    source: "/vol/pfc/data/datasets/Sequence3_lmdb" 
     # type of DB: LEVELDB or LMDB (LMDB supports concurrent reads)
     backend: LMDB
     # batch processing improves efficiency.
-    batch_size: 25
+    batch_size: 50
   }
 
 # mean pixel / channel-wise mean instead of mean image
@@ -24,7 +24,7 @@ layer {
     mirror: true
 #    crop_size: 227
   #  mean_file: "/vol/pfc/data/means/Sequence1_mean.binaryproto"
-     mean_file: "/mnt/data/mean_image_seq1.binaryproto"
+     mean_file: "/vol/pfc/data/means/Sequence3_mean.binaryproto"
   }
 }
 layer {
@@ -39,11 +39,11 @@ layer {
   data_param {
     # path to the DB
    # source: "/vol/pfc/data/datasets/Sequence1_lmdb"
-    source: "/vol/calculado_en_mi_mac/new_lmdb/train_lmdb"
+    source: "/vol/pfc/data/datasets/Sequence3_lmdb"
     # type of DB: LEVELDB or LMDB (LMDB supports concurrent reads)
     backend: LMDB
     # batch processing improves efficiency.
-    batch_size: 25
+    batch_size: 50
   }
 
 # mean pixel / channel-wise mean instead of mean image
@@ -52,7 +52,7 @@ layer {
   #  crop_size: 227
     # mean_file: "/vol/pfc/data/means/Sequence1_mean.binaryproto"
 
-    mean_file: "/mnt/data/mean_image_seq1.binaryproto"
+    mean_file: "/vol/pfc/data/means/Sequence3_mean.binaryproto"
   }
   
 }

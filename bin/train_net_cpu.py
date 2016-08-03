@@ -16,14 +16,12 @@ import caffe
 
 solver_prototxt_filename="solver.prototxt"
 
-#caffe.set_mode_cpu()
+caffe.set_mode_cpu()
 
-caffe.set_device(0)
-caffe.set_mode_gpu()
+#caffe.set_device(0)
+#caffe.set_mode_gpu()
 
 solver_prototxt_filename = sys.argv[1]
-
-print solver_prototxt_filename 
 solver = caffe.get_solver(solver_prototxt_filename)
 solver.solve()
 

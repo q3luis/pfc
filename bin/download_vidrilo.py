@@ -1,6 +1,6 @@
 __author__ = 'luispeinado'
 
-
+import sys
 from zipfile import ZipFile
 from urllib import urlretrieve
 from tempfile import mktemp
@@ -21,7 +21,7 @@ destino_path="../data/sequences/"
 
 def download_unzip(name):
 
-    filename = mktemp(name+'.zip')
+    filename = '/vol/tmp/'+name+'.zip'
     destDir = mktemp()
     theurl = 'http://www.rovit.ua.es/dataset/vidrilo/'+name+'.zip'
     print "init download "+str(theurl)
@@ -32,5 +32,7 @@ def download_unzip(name):
     print "end download "+str(theurl)
 
 
-for i in sequences:
-    download_unzip(i)
+#for i in sequences:
+i= sys.argv[1]
+
+download_unzip(i)

@@ -13,9 +13,12 @@ import os
 flag = True;
 filepath='../data/configuration/ConfigurationVidriloPrecomputedFeatures.mat'
 
-output_path='../data/datasets/'
+output_path='/vol/pfc/data/datasets/'
 
-image_path='../data/sequences/Sequence2/visualInformation/'
+
+image_path='/vol/pfc/data/sequences/'
+
+visual_path='/visualInformation/'
 
 sequences=["Sequence1","Sequence2","Sequence3","Sequence4","Sequence5"]
 
@@ -47,13 +50,13 @@ def getConfigSequence(conf,seq_name):
     return image_label
 
 
-for i in sequences:
+for s  in sequences:
     conf= loadConfig()
-    image_label=getConfigSequence(conf,i)
-    print i
-    file_ = open(output_path+i, 'w')
+    image_label=getConfigSequence(conf,s)
+    print s
+    file_ = open(output_path+s, 'w')
     for i in range(0,len(image_label)):
         (image,clase)= image_label[i]
-        file_.write(''+image_path+str(i)+str(image)+' '+str(clase)+'\n')
+        file_.write(''+image_path+str(s)+visual_path+str(image)+' '+str(clase)+'\n')
     file_.close()
 

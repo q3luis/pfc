@@ -19,6 +19,6 @@ display: 5000
 max_iter: 35000
 # snapshot intermediate results
 snapshot: 5000
-snapshot_prefix: "train_sequence_1_caffenet_20"
+snapshot_prefix: "train_sequence_1_caffenet"
 # solver mode: CPU or GPU
-solver_mode: GPU
+solver_mode: CPU
