@@ -15,14 +15,14 @@ layer {
     # type of DB: LEVELDB or LMDB (LMDB supports concurrent reads)
     backend: LMDB
     # batch processing improves efficiency.
-    batch_size: 25
+    batch_size: 50
   }
 
 # mean pixel / channel-wise mean instead of mean image
   transform_param {
  
     mirror: true
-#    crop_size: 227
+   #  crop_size: 227
   #  mean_file: "/vol/pfc/data/means/Sequence1_mean.binaryproto"
      mean_file: "/vol/pfc/data/means/Sequence_2_4_5_oversampel_scikit_learn.binaryproto"
   }

@@ -8,7 +8,7 @@ BASE_PATH='../prototxt/'
 SOLVER_FILE='/solver_25_200000.prototxt'
 
 echo "inicio"
-
+#sleep 1h
 echo "end sleep"
 
 array=( "sequence2" "sequence3" "sequence4" "sequence5" )
