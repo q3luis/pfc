@@ -1,0 +1,21 @@
+
+# Solver que va a optimizar ls sequencia 2 vs la 3 
+net: "/vol/pfc/prototxt/sequence2/train_sequence_50_vs_seq3_lmdb.prototxt"
+#test_iter: 1000
+#test_interval: 1000
+#test_iter: 100
+# Carry out testing every test_interval training iterations.
+#test_interval: 100
+test_initialization: false
+base_lr: 0.01
+lr_policy: "step"
+gamma: 0.1
+stepsize: 100000
+display: 5000
+max_iter: 35000
+momentum: 0.9
+weight_decay: 0.0005
+snapshot: 10000
+snapshot_prefix: "/vol/pfc/data/models/train_50_batch/train_sequence_2_50_vs_seq3_lmdb"
+# solver mode: CPU or GPU
+solver_mode: GPU
