@@ -53,8 +53,7 @@ os.system(convert_comand)
 convert_comand="GLOG_logtostderr=1 "+caffe_path+caffe_convert_imaggen_tool+" " \
                +resize_height_param+"="+new_height+" "+resize_width_param+"="+new_width+" "+ \
                sufle_param+" /"+" "+base_path+output_test_file_name+" "+base_path+output_test_file_name+"_lmdb"
-<<<<<<< HEAD
-=======
+
 
 print convert_comand
 os.system(convert_comand)
@@ -69,29 +68,7 @@ os.system(mean_comand)
 mean_comand=caffe_path+caffe_compute_mean_tool+" " \
             +base_path+output_test_file_name+"_lmdb"+" "+means_path+output_test_file_name+".binaryproto"
 
-print mean_comand
-os.system(mean_comand)
->>>>>>> 3b3aedb0ecf31e8745f051336b23965b6d740578
-
-print convert_comand
-os.system(convert_comand)
 
 
-mean_comand=caffe_path+caffe_compute_mean_tool+" " \
-               +base_path+output_train_file_name+"_lmdb"+" "+means_path+output_train_file_name+".binaryproto"
 
-print mean_comand
-os.system(mean_comand)
 
-mean_comand=caffe_path+caffe_compute_mean_tool+" " \
-            +base_path+output_test_file_name+"_lmdb"+" "+means_path+output_test_file_name+".binaryproto"
-
-print mean_comand
-os.system(mean_comand)
-
-<<<<<<< HEAD
-#/Users/luispeinado/caffe/build/tools/compute_image_mean
-#  train_lmdb2
-#  mean_image_seq2.binaryproto
-=======
->>>>>>> 3b3aedb0ecf31e8745f051336b23965b6d740578
