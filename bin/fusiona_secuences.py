@@ -54,6 +54,7 @@ convert_comand="GLOG_logtostderr=1 "+caffe_path+caffe_convert_imaggen_tool+" " \
                +resize_height_param+"="+new_height+" "+resize_width_param+"="+new_width+" "+ \
                sufle_param+" /"+" "+base_path+output_test_file_name+" "+base_path+output_test_file_name+"_lmdb"
 
+
 print convert_comand
 os.system(convert_comand)
 
@@ -67,7 +68,7 @@ os.system(mean_comand)
 mean_comand=caffe_path+caffe_compute_mean_tool+" " \
             +base_path+output_test_file_name+"_lmdb"+" "+means_path+output_test_file_name+".binaryproto"
 
-print mean_comand
-os.system(mean_comand)
+
+
 
 
