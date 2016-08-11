@@ -36,9 +36,9 @@ def fusion_sequences(origenes,path_destino):
 
 print "inicio la union de secuencias "
 print "train "
-fusion_sequences(train_sequences,base_path+output_train_file_name)
+#fusion_sequences(train_sequences,base_path+output_train_file_name)
 print "test"
-fusion_sequences(test_sequences,base_path+output_test_file_name)
+#fusion_sequences(test_sequences,base_path+output_test_file_name)
 
 print "fin la union de secuencias "
 

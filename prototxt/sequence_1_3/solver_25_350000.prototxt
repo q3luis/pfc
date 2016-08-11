@@ -1,0 +1,24 @@
+# The train/test net protocol buffer definition
+net: "/vol/pfc/prototxt/sequence1/train_sequence_25_lmdb.prototxt"
+# test_iter specifies how many forward passes the test should carry out.
+#test_iter: 100
+# Carry out testing every test_interval training iterations.
+#test_interval: 100
+test_initialization: false
+# The base learning rate, momentum and the weight decay of the network.
+base_lr: 0.01
+momentum: 0.5
+weight_decay: 0.0005
+# The learning rate policy
+lr_policy: "inv"
+gamma: 0.1
+power: 0.75
+# Display every 100 iterations
+display: 5000
+# The maximum number of iterations
+max_iter: 350000
+# snapshot intermediate results
+snapshot: 50000
+snapshot_prefix: "train_sequence_1_25_350000_lmdb"
+# solver mode: CPU or GPU
+solver_mode: GPU
