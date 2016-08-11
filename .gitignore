@@ -2,3 +2,13 @@ out
 configuration
 sequences
 .idea/
+*.caffemodel
+*.solverstate
+*.log
+sequenceLog1
+datasets
+means
+lmdb
+sequenceLog*
+data/datasets
+
