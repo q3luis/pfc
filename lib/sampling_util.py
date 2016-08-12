@@ -3,6 +3,7 @@ __author__ = 'luispeinado'
 
 from imblearn.over_sampling import RandomOverSampler
 import numpy as np
+from  collections import Counter
 
 
 def _load_file(path):
@@ -26,6 +27,11 @@ def generate_oversample_from_file(input_path_file,output_path_file):
     y= l[:,1]
     ros = RandomOverSampler()
     X_resampled, y_resampled = ros.fit_sample(X, y)
+    c= Counter(y)
+    print "old values "+str(c)
+    c= Counter(y_resampled)
+    print "new values"+str(c)
 
+    _to_file(X,y,output_path_file)
     print "end"
 
