@@ -62,10 +62,10 @@ def process_sequence(net,sequence,transform):
         image = np.transpose(data,(1, 2, 0))
         prediccion = predict(net,transform.preprocess('data', image))
         data_array.append((label,prediccion))
-        print " label "+str(label)+" preiccion "+str(prediccion)
-        cnt+=1
-        if(cnt>10):
-             break
+        #print " label "+str(label)+" preiccion "+str(prediccion)
+        #cnt+=1
+        #if(cnt>10):
+        #     break
 
     return data_array
 
