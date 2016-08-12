@@ -54,16 +54,22 @@ def get_accuracy(y):
 
 from sklearn.metrics import precision_score
 from sklearn.metrics import recall_score
+from sklearn.metrics import confusion_matrix
 def get_precision(y):
     y_real=y[:,0]
     y_pred=y[:,1]
-    return " "+str(precision_score(y_real,y_pred))
+    return " "+str(precision_score(y_real,y_pred,average='micro'))
 
 def get_recall(y):
     y_real=y[:,0]
     y_pred=y[:,1]
-    return " "+str(recall_score(y_real,y_pred))
-    
+    return " "+str(recall_score(y_real,y_pred,average='micro'))
+   
+def get_confusion_matrix(y):
+    y_real=y[:,0]
+    y_pred=y[:,1]
+    return " "+str(confusion_matrix(y_real,y_pred))
+
 
 len_data_evaluate_model=len(data_evaluate2)
 
@@ -73,10 +79,10 @@ for i in range(0,len_data_evaluate_model):
     print "model "+seq_model_label[i]
     result_line=""
     for j in range(0,len_dataset_evaluate):
-        result_line+=" "+seq_dataset_label[j]+": "+(get_accuracy(np.array(seq_for_model[j])))+" precision : "++(get_precision(np.array(seq_for_model[j])))+" recall "+(get_recall(np.array(seq_for_model[j])))
+        result_line+=" "+seq_dataset_label[j]+": "+(get_accuracy(np.array(seq_for_model[j])))+" precision : "+(get_precision(np.array(seq_for_model[j])))+" recall "+(get_recall(np.array(seq_for_model[j])))
 
     print result_line
-
+    print get_confusion_matrix(np.array(seq_for_model[j]))
 
 from sklearn.metrics import precision_score
 
