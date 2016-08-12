@@ -78,7 +78,7 @@ for i in range(0,len_data_evaluate_model):
     print result_line
 
 
-from sklearn.metrics import precision_score
+
 
 
 
