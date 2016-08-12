@@ -8,9 +8,9 @@ import lib.utils as ut
 import lib.caffe_utils as cut
 
 
-base_path= "/vol/pfc/data/"
+base_path= "/vol/pfc/data/datasets"
 
-means_path="/vol/pfc/data/"
+means_path="/vol/pfc/data/means/"
 
 
 
