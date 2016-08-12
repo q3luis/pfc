@@ -32,6 +32,6 @@ def generate_oversample_from_file(input_path_file,output_path_file):
     c= Counter(y_resampled)
     print "new values"+str(c)
 
-    _to_file(X,y,output_path_file)
+    _to_file(X_resampled,y_resampled,output_path_file)
     print "end"
 
