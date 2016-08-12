@@ -41,6 +41,7 @@ def load_sequence(path):
 
 def load_model(model_path,deploy_path):
     #deploy_path="/vol/pfc/prototxt/sequence1/train_sequence_25_lmdb_deploy.prototxt"
+    caffe.set_mode_gpu()
     net = caffe.Net(deploy_path,model_path, caffe.TEST)
     return net
 
@@ -62,7 +63,7 @@ def process_sequence(net,sequence,transform):
         image = np.transpose(data,(1, 2, 0))
         prediccion = predict(net,transform.preprocess('data', image))
         data_array.append((label,prediccion))
-        #print " label "+str(label)+" preiccion "+str(prediccion)
+        print " label "+str(label)+" preiccion "+str(prediccion)
         #cnt+=1
         #if(cnt>10):
         #     break
