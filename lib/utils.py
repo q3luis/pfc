@@ -64,7 +64,7 @@ def process_sequence(net,sequence,transform):
         data_array.append((label,prediccion))
         print " label "+str(label)+" preiccion "+str(prediccion)
         cnt+=1
-        if(cnt>100):
+        if(cnt>10):
              break
 
     return data_array
