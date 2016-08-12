@@ -42,6 +42,7 @@ def generate_lmbd_dataset(input_dataset,output_file,new_height,new_width):
                +resize_height_param+"="+new_height+" "+resize_width_param+"="+new_width+" "+ \
                sufle_param+" /"+" "+input_dataset+" "+output_file+"_lmdb"
     execute_comand(convert_comand)
+    return output_file+"_lmdb"
 
 def generate_imagen_meadn(input_dataset,output_file):
     mean_comand=caffe_path+caffe_compute_mean_tool+" " \
