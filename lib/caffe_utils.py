@@ -46,7 +46,7 @@ def generate_lmbd_dataset(input_dataset,output_file,new_height,new_width):
 
 def generate_imagen_meadn(input_dataset,output_file):
     mean_comand=caffe_path+caffe_compute_mean_tool+" " \
-                +input_dataset+"_lmdb"+" "+output_file+".binaryproto"
+                +input_dataset+" "+output_file+".binaryproto"
     execute_comand(mean_comand)
     transform_image_mean_to_np(output_file+".binaryproto",output_file)
 
