@@ -11,20 +11,20 @@ layer {
   data_param {
     # path to the DB
     #source: "/mnt/data_input/Sequence1_lmdb/"
-    source: "/vol/pfc/data/datasets/Sequence2_lmdb" 
+    source: "/vol/pfc/data/datasets/Sequence2_oversampled_240_320_lmdb" 
     # type of DB: LEVELDB or LMDB (LMDB supports concurrent reads)
     backend: LMDB
     # batch processing improves efficiency.
-    batch_size: 25
+    batch_size: 50
   }
 
 # mean pixel / channel-wise mean instead of mean image
   transform_param {
  
     mirror: true
-#    crop_size: 227
+    crop_size: 227
   #  mean_file: "/vol/pfc/data/means/Sequence1_mean.binaryproto"
-     mean_file: "/vol/pfc/data/means/Sequence2_mean.binaryproto"
+     mean_file: "/vol/pfc/data/means/Sequence2_240_320.binaryproto"
   }
 }
 layer {
@@ -39,7 +39,7 @@ layer {
   data_param {
     # path to the DB
    # source: "/vol/pfc/data/datasets/Sequence1_lmdb"
-    source: "/vol/pfc/data/datasets/Sequence2_lmdb"
+    source: "/vol/pfc/data/datasets/Sequence3_240_320_lmdb"
     # type of DB: LEVELDB or LMDB (LMDB supports concurrent reads)
     backend: LMDB
     # batch processing improves efficiency.
@@ -49,10 +49,10 @@ layer {
 # mean pixel / channel-wise mean instead of mean image
   transform_param {
     mirror: true
-  #  crop_size: 227
+   crop_size: 227
     # mean_file: "/vol/pfc/data/means/Sequence1_mean.binaryproto"
 
-    mean_file: "/vol/pfc/data/means/Sequence2_mean.binaryproto"
+    mean_file: "/vol/pfc/data/means/Sequence2_240_320.binaryproto"
   }
   
 }
@@ -61,10 +61,26 @@ layer {
   type: "Convolution"
   bottom: "data"
   top: "conv1"
+  param {
+    lr_mult: 1
+    decay_mult: 1
+  }
+  param {
+    lr_mult: 2
+    decay_mult: 0
+  }
   convolution_param {
     num_output: 96
     kernel_size: 11
     stride: 4
+    weight_filler {
+      type: "gaussian"
+      std: 0.01
+    }
+    bias_filler {
+      type: "constant"
+      value: 0
+    }
   }
 }
 layer {
@@ -100,11 +116,27 @@ layer {
   type: "Convolution"
   bottom: "norm1"
   top: "conv2"
+  param {
+    lr_mult: 1
+    decay_mult: 1
+  }
+  param {
+    lr_mult: 2
+    decay_mult: 0
+  }
   convolution_param {
     num_output: 256
     pad: 2
     kernel_size: 5
     group: 2
+    weight_filler {
+      type: "gaussian"
+      std: 0.01
+    }
+    bias_filler {
+      type: "constant"
+      value: 1
+    }
   }
 }
 layer {
@@ -140,10 +172,26 @@ layer {
   type: "Convolution"
   bottom: "norm2"
   top: "conv3"
+  param {
+    lr_mult: 1
+    decay_mult: 1
+  }
+  param {
+    lr_mult: 2
+    decay_mult: 0
+  }
   convolution_param {
     num_output: 384
     pad: 1
     kernel_size: 3
+    weight_filler {
+      type: "gaussian"
+      std: 0.01
+    }
+    bias_filler {
+      type: "constant"
+      value: 0
+    }
   }
 }
 layer {
@@ -157,11 +205,27 @@ layer {
   type: "Convolution"
   bottom: "conv3"
   top: "conv4"
+  param {
+    lr_mult: 1
+    decay_mult: 1
+  }
+  param {
+    lr_mult: 2
+    decay_mult: 0
+  }
   convolution_param {
     num_output: 384
     pad: 1
     kernel_size: 3
     group: 2
+    weight_filler {
+      type: "gaussian"
+      std: 0.01
+    }
+    bias_filler {
+      type: "constant"
+      value: 1
+    }
   }
 }
 layer {
@@ -175,11 +239,27 @@ layer {
   type: "Convolution"
   bottom: "conv4"
   top: "conv5"
+  param {
+    lr_mult: 1
+    decay_mult: 1
+  }
+  param {
+    lr_mult: 2
+    decay_mult: 0
+  }
   convolution_param {
     num_output: 256
     pad: 1
     kernel_size: 3
     group: 2
+    weight_filler {
+      type: "gaussian"
+      std: 0.01
+    }
+    bias_filler {
+      type: "constant"
+      value: 1
+    }
   }
 }
 layer {
@@ -204,8 +284,24 @@ layer {
   type: "InnerProduct"
   bottom: "pool5"
   top: "fc6"
+  param {
+    lr_mult: 1
+    decay_mult: 1
+  }
+  param {
+    lr_mult: 2
+    decay_mult: 0
+  }
   inner_product_param {
     num_output: 4096
+    weight_filler {
+      type: "gaussian"
+      std: 0.005
+    }
+    bias_filler {
+      type: "constant"
+      value: 1
+    }
   }
 }
 layer {
@@ -228,8 +324,24 @@ layer {
   type: "InnerProduct"
   bottom: "fc6"
   top: "fc7"
+  param {
+    lr_mult: 1
+    decay_mult: 1
+  }
+  param {
+    lr_mult: 2
+    decay_mult: 0
+  }
   inner_product_param {
     num_output: 4096
+    weight_filler {
+      type: "gaussian"
+      std: 0.005
+    }
+    bias_filler {
+      type: "constant"
+      value: 1
+    }
   }
 }
 layer {
@@ -252,13 +364,40 @@ layer {
   type: "InnerProduct"
   bottom: "fc7"
   top: "fc8"
+  param {
+    lr_mult: 1
+    decay_mult: 1
+  }
+  param {
+    lr_mult: 2
+    decay_mult: 0
+  }
   inner_product_param {
     num_output: 1000
+    weight_filler {
+      type: "gaussian"
+      std: 0.01
+    }
+    bias_filler {
+      type: "constant"
+      value: 0
+    }
   }
 }
 layer {
-  name: "prob"
-  type: "Softmax"
+  name: "accuracy"
+  type: "Accuracy"
   bottom: "fc8"
-  top: "prob"
+  bottom: "label"
+  top: "accuracy"
+  include {
+    phase: TEST
+  }
+}
+layer {
+  name: "loss"
+  type: "SoftmaxWithLoss"
+  bottom: "fc8"
+  bottom: "label"
+  top: "loss"
 }

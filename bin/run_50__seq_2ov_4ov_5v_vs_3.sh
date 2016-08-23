@@ -6,7 +6,7 @@ PYTHON_COMAND='python'
 SCRIP_COMAND='train_net.py'
 
 BASE_PATH='../prototxt/'
-SOLVER_FILE='/solver_25_test_3.prototxt'
+SOLVER_FILE='/solver_50_test_3.prototxt'
 
 array=( "sequence2" "sequence3" "sequence4" "sequence5" )
 array=(  "sequence2oversample" "sequence4oversample" "sequence5oversample"  )

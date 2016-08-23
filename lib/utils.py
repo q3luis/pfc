@@ -61,6 +61,7 @@ def process_sequence(net,sequence,transform):
         label = datum.label
         data = caffe.io.datum_to_array(datum)
         image = np.transpose(data,(1, 2, 0))
+        #print "image shape "+str(transform.preprocess('data', image).shape)
         prediccion = predict(net,transform.preprocess('data', image))
         data_array.append((label,prediccion))
         print " label "+str(label)+" preiccion "+str(prediccion)

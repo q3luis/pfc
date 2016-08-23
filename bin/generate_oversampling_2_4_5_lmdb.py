@@ -19,8 +19,7 @@ means_path="/vol/pfc/data/means/"
 
 
 sequences=[ "Sequence2","Sequence4","Sequence5"]
-
-
+sequences=[ "Sequence_2_4_5"]
 
 for seq in sequences:
     smpl.generate_oversample_from_file(base_path+seq,base_path+seq+"_oversampled")

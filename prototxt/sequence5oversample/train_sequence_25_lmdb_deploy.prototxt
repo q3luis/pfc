@@ -11,7 +11,7 @@ layer {
   data_param {
     # path to the DB
     #source: "/mnt/data_input/Sequence1_lmdb/"
-    source: "/vol/pfc/data/datasets/Sequence2_lmdb" 
+    source: "/vol/pfc/data/datasets/Sequences_2_Oversample_lmdb" 
     # type of DB: LEVELDB or LMDB (LMDB supports concurrent reads)
     backend: LMDB
     # batch processing improves efficiency.
@@ -24,7 +24,7 @@ layer {
     mirror: true
 #    crop_size: 227
   #  mean_file: "/vol/pfc/data/means/Sequence1_mean.binaryproto"
-     mean_file: "/vol/pfc/data/means/Sequence2_mean.binaryproto"
+     mean_file: "/vol/pfc/data/means/Sequences_2_Oversample.binaryproto"
   }
 }
 layer {
@@ -39,7 +39,7 @@ layer {
   data_param {
     # path to the DB
    # source: "/vol/pfc/data/datasets/Sequence1_lmdb"
-    source: "/vol/pfc/data/datasets/Sequence2_lmdb"
+    source: "/vol/pfc/data/datasets/Sequences_2_Oversample_lmdb"
     # type of DB: LEVELDB or LMDB (LMDB supports concurrent reads)
     backend: LMDB
     # batch processing improves efficiency.
@@ -52,7 +52,7 @@ layer {
   #  crop_size: 227
     # mean_file: "/vol/pfc/data/means/Sequence1_mean.binaryproto"
 
-    mean_file: "/vol/pfc/data/means/Sequence2_mean.binaryproto"
+    mean_file: "/vol/pfc/data/means/Sequences_2_Oversample.binaryproto"
   }
   
 }
