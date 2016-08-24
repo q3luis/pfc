@@ -28,9 +28,9 @@ def predict(net,image_in):
 
 datum = caffe.proto.caffe_pb2.Datum()
 # Caffe en modo gpu para evaluar mas rapido
-#caffe.set_mode_gpu()
+caffe.set_mode_gpu()
 
-caffe.set_mode_cpu()
+#caffe.set_mode_cpu()
 
 
 def load_sequence(path):
