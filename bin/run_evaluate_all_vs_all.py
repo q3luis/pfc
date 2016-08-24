@@ -18,21 +18,30 @@ sequences=["/vol/pfc/data/datasets/Sequence1_lmdb","/vol/pfc/data/datasets/Seque
            ,"/vol/pfc/data/datasets/Sequence3_lmdb","/vol/pfc/data/datasets/Sequence4_lmdb"
            ,"/vol/pfc/data/datasets/Sequence5_lmdb"]
 
-sequences=["/vol/pfc/data/datasets/Sequence1_lmdb"]
+#sequences=["/vol/pfc/data/datasets/Sequence1_lmdb"]
 
-models=["/mnt/model/train_25_batch/train_sequence_1_25_lmdb_iter_35000.caffemodel","/mnt/model/train_25_batch/train_sequence_2_25_lmdb_iter_35000.caffemodel"
+models=["/mnt/model/train_25_batch/train_sequence_1_25_lmdb_iter_35000.caffemodel",
+        "/mnt/model/train_25_batch/train_sequence_2_25_lmdb_iter_35000.caffemodel",
+        "/vol/pfc/data/models/train_25_batch/train_sequence_3_25_lmdb_iter_35000.caffemodel"
        ,"/mnt/model/train_25_batch/train_sequence_4_25_lmdb_iter_35000.caffemodel"
        ,"/mnt/model/train_25_batch/train_sequence_5_25_lmdb_iter_35000.caffemodel"]
 
 models=["/mnt/model/train_25_batch/train_sequence_2_25_lmdb_iter_35000.caffemodel"]
 
-means=["/vol/pfc/data/means/Sequence1_mean.npy","/vol/pfc/data/means/Sequence2_mean.npy"
-       ,"/vol/pfc/data/means/Sequence4_mean.npy","/vol/pfc/data/means/Sequence5_mean.npy"]
+means=["/vol/pfc/data/means/Sequence1_mean.npy","/vol/pfc/data/means/Sequence2_mean.npy",
+       "/vol/pfc/data/means/Sequence3_mean.npy","/vol/pfc/data/means/Sequence4_mean.npy"
+       ,"/vol/pfc/data/means/Sequence5_mean.npy"]
+
+deploys=["/vol/pfc/prototxt/sequence1/train_sequence_25_lmdb_deploy.prototxt",
+         "/vol/pfc/prototxt/sequence2/train_sequence_25_lmdb_deploy.prototxt",
+         "/vol/pfc/prototxt/sequence3/train_sequence_25_lmdb_deploy.prototxt"
+        ,"/vol/pfc/prototxt/sequence4/train_sequence_25_lmdb_deploy.prototxt"
+        ,"/vol/pfc/prototxt/sequence5/train_sequence_25_lmdb_deploy.prototxt"]
 
 
-means=["/vol/pfc/data/means/Sequence2_mean.npy"]
+#means=["/vol/pfc/data/means/Sequence2_mean.npy"]
 
-deploys=["/vol/pfc/prototxt/sequence2/train_sequence_25_lmdb_deploy.prototxt"]
+#deploys=["/vol/pfc/prototxt/sequence2/train_sequence_25_lmdb_deploy.prototxt"]
 
 
 len_model=len(models)
