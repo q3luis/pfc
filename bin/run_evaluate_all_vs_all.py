@@ -18,11 +18,10 @@ sequences=["/vol/pfc/data/datasets/Sequence1_lmdb","/vol/pfc/data/datasets/Seque
            ,"/vol/pfc/data/datasets/Sequence3_lmdb","/vol/pfc/data/datasets/Sequence4_lmdb"
            ,"/vol/pfc/data/datasets/Sequence5_lmdb"]
 
-#sequences=["/vol/pfc/data/datasets/Sequence1_lmdb"]
 
 models=["/mnt/model/train_25_batch/train_sequence_1_25_lmdb_iter_35000.caffemodel",
         "/mnt/model/train_25_batch/train_sequence_2_25_lmdb_iter_35000.caffemodel",
-        "/vol/pfc/data/models/train_25_batch/train_sequence_3_25_lmdb_iter_35000.caffemodel"
+        "/vol/pfc/data/models/train_25_batch/train_sequence_3_25_lmdb_iter_35000.caffemodel",
        ,"/mnt/model/train_25_batch/train_sequence_4_25_lmdb_iter_35000.caffemodel"
        ,"/mnt/model/train_25_batch/train_sequence_5_25_lmdb_iter_35000.caffemodel"]
 
@@ -63,7 +62,7 @@ for i in range(0,len_model):
 
 
 seq_model_label=['seq1_model','seq2_model','seq4_model','seq5_model']
-seq_model_label=['seq2_model']
+#seq_model_label=['seq2_model']
 
 
 seq_dataset_label=['seq1','seq2','seq3','seq4','seq5']
@@ -108,13 +107,17 @@ for i in range(0,len_data_evaluate_model):
         print result_line
         print get_confusion_matrix(np.array(seq_for_model[j]))
 
+        
 import pickle
 
 X= np.array(data_evaluate2)
 
-output = open('evaluate_seq2_vs_all.pkl', 'wb')
+output = open('evaluate_all_vs_all.pkl', 'wb')
 pickle.dump(X, output)
 output.close()
+
+
+
 
 
 
