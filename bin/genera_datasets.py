@@ -34,7 +34,6 @@ def loadConfig():
             f = scipy.io.loadmat(filepath)
     except:
         print('Error')
-
     return f['Configuration']
 
 def save(values):

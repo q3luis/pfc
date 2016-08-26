@@ -11,7 +11,7 @@ echo "init run 50"
 echo "end sleep run train "
 
 array=("sequence1" "sequence2" "sequence3" "sequence4" "sequence5" )
-array=("sequence1" )
+array=("sequence3" )
 for i in "${array[@]}"
 do
 	CONCAT=$BASE_PATH$i$SOLVER_FILE
