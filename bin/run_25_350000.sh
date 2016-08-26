@@ -7,7 +7,7 @@ SCRIP_COMAND='train_net.py'
 BASE_PATH='../prototxt/'
 SOLVER_FILE='/solver_25_350000.prototxt'
 
-array=( "sequence2" "sequence3" "sequence4" "sequence5" )
+array=( "sequence1" "sequence3" "sequence4" "sequence5" )
 for i in "${array[@]}"
 do
 	CONCAT=$BASE_PATH$i$SOLVER_FILE
