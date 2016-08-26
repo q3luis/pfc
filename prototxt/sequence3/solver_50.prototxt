@@ -19,6 +19,6 @@ display: 5000
 max_iter: 35000
 # snapshot intermediate results
 snapshot: 5000
-snapshot_prefix: "train_sequence_3_50_lmdb"
+snapshot_prefix: "/vol/pfc/data/models/train_50_batch/train_sequence_3_50_lmdb"
 # solver mode: CPU or GPU
 solver_mode: GPU
