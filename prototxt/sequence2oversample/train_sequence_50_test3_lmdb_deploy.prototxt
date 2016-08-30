@@ -24,7 +24,7 @@ layer {
     mirror: true
     crop_size: 227
   #  mean_file: "/vol/pfc/data/means/Sequence1_mean.binaryproto"
-     mean_file: "/vol/pfc/data/means/Sequences_2_Oversample.binaryproto"
+     mean_file: "/vol/pfc/data/means/Sequences_2_Oversample2.binaryproto"
   }
 }
 layer {
@@ -52,7 +52,7 @@ layer {
     crop_size: 227
     # mean_file: "/vol/pfc/data/means/Sequence1_mean.binaryproto"
 
-    mean_file: "/vol/pfc/data/means/Sequences_2_Oversample.binaryproto"
+    mean_file: "/vol/pfc/data/means/Sequences_2_Oversample2.binaryproto"
   }
   
 }
